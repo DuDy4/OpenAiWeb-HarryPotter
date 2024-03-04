@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
+import React, {useContext} from 'react';
 import axios from 'axios';
 import {useForm} from "react-hook-form";
+import {ConversationContext} from "../Providers/ConversationProvider";
 
 
 const ChatWindow = () => {
-    const [question, setQuestion] = useState('');
-    const [response, setResponse] = useState('');
-    const { register, handleSubmit, formState, reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
+    const {addConversation, conversation} = useContext(ConversationContext)
 
     const apiKey = process.env.REACT_APP_API_KEY;
-    const handleChange = (event) => {
-        setQuestion(event.target.value);
-    };
+
+    const prepareMessage = (newQuestion) => {
+        const message = [];
+        conversation.forEach((msg) => {
+            message.push({ role: 'user', content: msg.question }, { role: 'assistant', content: msg.answer })
+        })
+        message.push({role: "user", content: newQuestion})
+        return message;
+    }
 
     const handleQuestion = async (data) => {
         const prompt = data.question
-        console.log(prompt);
+        // console.log(prompt);
         try {
             const response = await axios.post(
                 'https://api.openai.com/v1/chat/completions',
                 {
                     model: 'gpt-3.5-turbo', // Or any other model you prefer
-                    messages: [{"role": "user", "content": `${prompt}`}],
+                    messages: prepareMessage(prompt),
                     temperature: 0.7
                     // prompt: question,
                     // max_tokens: 150
@@ -33,15 +39,19 @@ const ChatWindow = () => {
                     }
                 }
             );
-            console.log(response.data)
-            setResponse(response.data.choices[0].message.content.trim());
-            console.log(response)
+            // console.log(response.data)
+            const answer = response.data.choices[0].message.content.trim()
+            await addConversation({question: prompt, answer: answer})
+            console.log(conversation)
+            // console.log(response)
+
         } catch (error) {
             console.error('Error fetching response:', error);
             console.log('Response data:', error.response.data);
             console.log('Response status:', error.response.status);
             console.log('Response headers:', error.response.headers);
         }
+        reset()
     };
 
     return (
@@ -55,7 +65,8 @@ const ChatWindow = () => {
                 />
                 <button type="submit">Ask</button>
             </form>
-            {response && <div className="response">{response}</div>}
+            <br/>
+            {/*{response && <div className="response">Answer: {response}</div>}*/}
         </div>
     );
 };

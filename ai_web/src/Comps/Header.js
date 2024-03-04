@@ -8,17 +8,17 @@ export default function Header(){
             <div className="container">
                 <ul className="nav">
                     This is the nav-bar
-                    {/*<li className="nav-item">*/}
-                    {/*    <Link className="nav-link" to='/'>*/}
-                    {/*        Home*/}
-                    {/*    </Link>*/}
-                    {/*</li>*/}
+                    <li className="nav-item">
+                        <Link className="nav-link" to='/'>
+                            Home
+                        </Link>
+                    </li>
 
-                    {/*{user && <li className="nav-item">*/}
-                    {/*    <Link className="nav-link" to='/write_post'>*/}
-                    {/*        Write post*/}
-                    {/*    </Link>*/}
-                    {/*</li>}*/}
+                    {<li className="nav-item">
+                        <Link className="nav-link" to='/conversation'>
+                            Conversation
+                        </Link>
+                    </li>}
                 </ul>
             </div>
         </nav>

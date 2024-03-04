@@ -1,13 +1,11 @@
-import {useContext, useEffect, useState} from "react";
+import {useState} from "react";
 import {useForm} from "react-hook-form";
-// import {AuthContext} from "../providers/AuthProvider";
 
 
 export default function Contact() {
-    // const {user} = useContext(AuthContext)
     const [complaint, setComplaint] = useState(true)
     const [idCounter, setIdCounter] = useState(0) // ID counter for the local storage
-    const { register, handleSubmit, formState, reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     //This function happen on submit, saves the data to local storage and rerender the page.
     const handleComplaint = (data) => {

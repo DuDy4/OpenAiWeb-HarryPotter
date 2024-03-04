@@ -4,13 +4,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {RouterProvider} from "react-router-dom";
 import {router} from "./routes";
+import {ConversationProvider} from "./Providers/ConversationProvider";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <RouterProvider router={router}/>
-  </React.StrictMode>
+  // <React.StrictMode>
+      <ConversationProvider>
+          <RouterProvider router={router}/>
+      </ConversationProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
