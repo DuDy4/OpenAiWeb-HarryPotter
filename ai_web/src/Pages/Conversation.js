@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from 'react'
 import {ConversationContext} from "../Providers/ConversationProvider";
 import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
-import ChatBox from "../Comps/chatBox";
+import ChatBox from "../Comps/QuestionForm";
 import ConversationList from "../Comps/ConversationList";
 
 export default function Conversation(){
@@ -21,7 +21,7 @@ export default function Conversation(){
     }, [conversation]);
 
     return (
-        <div>
+        <div className="conversation">
             <ConversationList>
                 {conversation.map((questionAndAnswer) =>
                     <QuestionAndAnswer key={getId()}

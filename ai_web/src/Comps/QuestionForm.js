@@ -19,18 +19,14 @@ const ChatWindow = () => {
         return message;
     }
 
-    const handleQuestion = async (data) => {
-        const prompt = data.question
-        // console.log(prompt);
+    const sendQuestion = async (question) => {
         try {
             const response = await axios.post(
                 'https://api.openai.com/v1/chat/completions',
                 {
                     model: 'gpt-3.5-turbo', // Or any other model you prefer
-                    messages: prepareMessage(prompt),
+                    messages: prepareMessage(question),
                     temperature: 0.7
-                    // prompt: question,
-                    // max_tokens: 150
                 },
                 {
                     headers: {
@@ -41,9 +37,8 @@ const ChatWindow = () => {
             );
             // console.log(response.data)
             const answer = response.data.choices[0].message.content.trim()
-            await addConversation({question: prompt, answer: answer})
+            await addConversation({question: question, answer: answer})
             console.log(conversation)
-            // console.log(response)
 
         } catch (error) {
             console.error('Error fetching response:', error);
@@ -56,17 +51,16 @@ const ChatWindow = () => {
 
     return (
         <div className="chat-window">
-            <form onSubmit={handleSubmit(handleQuestion)}>
-                <input
+            <input
                     type="text"
-                    id="question"
-                    placeholder="Ask a question..."
-                    {...register("question")}
-                />
-                <button type="submit">Ask</button>
-            </form>
+                    placeholder="Type a message..."
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            sendQuestion(e.target.value);
+                            e.target.value = '';
+                        }
+                    }}/>
             <br/>
-            {/*{response && <div className="response">Answer: {response}</div>}*/}
         </div>
     );
 };

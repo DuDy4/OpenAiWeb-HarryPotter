@@ -1,5 +1,5 @@
 import React from "../Comps/react";
-import ChatBox from "../Comps/chatBox";
+import ChatBox from "../Comps/QuestionForm";
 
 export default function Home(){
 
