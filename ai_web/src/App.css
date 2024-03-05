@@ -1,31 +1,120 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 200vh;
+  background-image: url("./openart-image_hdMCk0LD_1709564858693_raw.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
-.postPage{
-  flex: 1;
+.Footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.Footer-Link{
+  background-color: #dddddd;
+  border-radius: 0 0.5rem 0 0;
+}
+
+.Header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #333; /* Adjust as needed */
+  color: #fff; /* Adjust as needed */
+  padding: 10px; /* Adjust padding as needed */
+  z-index: 1000; /* Ensure header appears above other content */
+  background: transparent;
+}
+
+.conversation{
+  margin-top: 60px;;
+  box-sizing: border-box;
+  /*padding-bottom: 31.9rem;*/
+  align-items: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: space-around;
-  min-height: 40vh;
-
+  box-shadow: 0 3rem 6rem rgba(70, 41, 242, 0.1400000006);
+  background-color: gold;
+  border-radius: 1rem 1rem 1rem 1rem;
 }
 
-.buttons{
+/*.conversation.chatBox{*/
+/*  box-sizing: border-box;*/
+/*  padding-bottom: 31.9rem;*/
+/*  align-items: center;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  box-shadow: 0 3rem 6rem rgba(70, 41, 242, 0.1400000006);*/
+/*}*/
+
+.ConversationList{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: green;
+}
+
+.QAndA{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: gold;
+}
+
+.QuestionBubbleContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: end;
+  border-radius: 1rem 0rem 1rem 1rem;
+  background-color: #4629f2;
+}
+
+.QuestionBubble{
   display: flex;
   flex-direction: row;
-  text-align: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 10px 4px 10px ;
 }
 
-.postsList{
+.Question{
+  color: #ededed;
+  /*color: #ffffff;*/
+}
+
+.AnswerBubbleContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-radius: 0 1rem 1rem 1rem;
+  background-color: #f1f7ff;
+}
+
+.AnswerBubble{
+  display: flex;
+  flex-direction: row;
+  align-self: end;
+
+  justify-content: center;
+  align-items: center;
+  margin: 4px 10px 4px 10px ;
+}
+
+.Answer{
+  color: #0d082c;
+}
+
+.flex-buttons{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 15px;
+  text-align: center;
+  justify-content: space-evenly;
+  list-style-type: none; /* Remove bullets */
+  gap: 10px;
 
 }
 
@@ -34,13 +123,6 @@
   flex-direction: row;
   justify-content: space-between;
   min-width: 45vh;
-}
-
-.postsDisplay{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 35px;
 }
 
 .content {

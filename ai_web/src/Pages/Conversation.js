@@ -3,6 +3,7 @@ import {ConversationContext} from "../Providers/ConversationProvider";
 import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
 import ChatBox from "../Comps/QuestionForm";
 import ConversationList from "../Comps/ConversationList";
+import ConversationBox from "../Comps/ConversationBox";
 
 export default function Conversation(){
     const {conversation} = useContext(ConversationContext);
@@ -22,6 +23,7 @@ export default function Conversation(){
 
     return (
         <div className="conversation">
+            {/*<ConversationBox/>*/}
             <ConversationList>
                 {conversation.map((questionAndAnswer) =>
                     <QuestionAndAnswer key={getId()}

@@ -50,12 +50,11 @@ const ChatWindow = () => {
     };
 
     return (
-        <div className="chat-window">
-            <input
-                    type="text"
+        <div className="chatWindow">
+            <textarea
                     placeholder="Type a message..."
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
+                        if (!(e.shiftKey && e.key === 'Enter') && e.key === 'Enter') {
                             sendQuestion(e.target.value);
                             e.target.value = '';
                         }

@@ -2,9 +2,9 @@ import {Link} from "react-router-dom";
 
 export default function Footer(){
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary footer" >
+        <nav className="navbar navbar-expand-lg bg-body-tertiary Footer" >
             <br/>
-            <Link className="nav-link" to="/Contact">
+            <Link className="nav-link Footer-Link" to="/Contact">
                 Contact us
             </Link>
         </nav>
