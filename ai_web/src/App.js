@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-        <div className="content">
+        <div className="content margin-top-60px">
             <Outlet/>
         </div>
       <Footer/>

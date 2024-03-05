@@ -20,8 +20,8 @@
 .Header{
   position: fixed;
   top: 0;
-  left: 0;
-  height: 100%;
+  left: -3%;
+  height: 90%;
   background-color: #333; /* Adjust as needed */
   color: #fff; /* Adjust as needed */
   padding: 10px; /* Adjust padding as needed */
@@ -30,7 +30,6 @@
 }
 
 .conversation{
-  margin-top: 60px;;
   box-sizing: border-box;
   /*padding-bottom: 31.9rem;*/
   align-items: center;
@@ -106,6 +105,19 @@
 
 .Answer{
   color: #0d082c;
+}
+
+.Home{
+  background: #61dafb;
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+
+.contact{
+  background: white;
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+.margin-top-60px{
+  margin-top: 60px;
 }
 
 .flex-buttons{

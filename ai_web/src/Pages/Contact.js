@@ -20,7 +20,7 @@ export default function Contact() {
     //This page will take a form of complaint and direct the page to an "accepted" page.
     //There, the user can choose to file another complaint.
     return (
-        <div className="footer">
+        <div className="contact">
             <h1>Contact us</h1>
             <h3>We take your input sooooooo seriously</h3>
 
