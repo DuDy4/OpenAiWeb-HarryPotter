@@ -1,17 +1,19 @@
 import React, {useContext} from 'react';
 import axios from 'axios';
-import {useForm} from "react-hook-form";
 import {ConversationContext} from "../Providers/ConversationProvider";
 
 
 const ChatWindow = () => {
-    const { register, handleSubmit, reset } = useForm();
-    const {addConversation, conversation} = useContext(ConversationContext)
+    const {addConversation, conversation, characterIntro} = useContext(ConversationContext)
 
     const apiKey = process.env.REACT_APP_API_KEY;
 
     const prepareMessage = (newQuestion) => {
         const message = [];
+        if (characterIntro){
+            message.push({ role: 'user', content: characterIntro.question },
+                { role: 'assistant', content: characterIntro.answer });
+        }
         conversation.forEach((msg) => {
             message.push({ role: 'user', content: msg.question }, { role: 'assistant', content: msg.answer })
         })
@@ -21,6 +23,7 @@ const ChatWindow = () => {
 
     const sendQuestion = async (question) => {
         try {
+            console.log(question)
             const response = await axios.post(
                 'https://api.openai.com/v1/chat/completions',
                 {
@@ -46,7 +49,7 @@ const ChatWindow = () => {
             console.log('Response status:', error.response.status);
             console.log('Response headers:', error.response.headers);
         }
-        reset()
+        // reset()
     };
 
     return (

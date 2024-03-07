@@ -4,12 +4,14 @@ import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
 import ChatBox from "../Comps/QuestionForm";
 import ConversationList from "../Comps/ConversationList";
 import ConversationBox from "../Comps/ConversationBox";
+import ChooseACharacter from "../Comps/ChooseACharacter";
 
 export default function Conversation(){
-    const {conversation} = useContext(ConversationContext);
-    console.log(conversation)
+    const {conversation, characterIntro} = useContext(ConversationContext);
     const [, setTriggerRerender] = useState({}); // Dummy state to trigger re-render
     let conversationId = 0;
+
+
 
     function getId(){
         conversationId++;
@@ -18,13 +20,15 @@ export default function Conversation(){
 
 
     useEffect(() => {
-        setTriggerRerender({}); // Update dummy state to trigger re-render
+        setTriggerRerender({});
     }, [conversation]);
 
     return (
         <div className="conversation">
-            {/*<ConversationBox/>*/}
+            <ChooseACharacter/>
             <ConversationList>
+                {characterIntro && <QuestionAndAnswer key={getId()}
+                    answer={characterIntro.answer}/>}
                 {conversation.map((questionAndAnswer) =>
                     <QuestionAndAnswer key={getId()}
                                        question={questionAndAnswer.question}
