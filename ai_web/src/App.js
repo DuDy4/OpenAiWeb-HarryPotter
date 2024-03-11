@@ -9,7 +9,7 @@ function App() {
       <Header />
 
 
-        <div className="content margin-top-60px">
+        <div className="content">
             <Outlet/>
         </div>
       <Footer/>
