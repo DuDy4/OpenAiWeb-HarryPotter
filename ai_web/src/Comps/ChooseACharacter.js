@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 export default function ChooseACharacter(){
-    const {handleCharacterIntro, addConversation, cleanConversation,
+    const {handleCharacterIntro, cleanConversation,
         character, handleCharacter, characterResponse} = useContext(ConversationContext);
     const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -14,32 +14,12 @@ export default function ChooseACharacter(){
         cleanConversation();
     }
 
-    const sendCharacter = async (character) => {
+    const startCharacter = (character) => {
         try {
             const question = `Can you please have a chat with me as if you are ${character} from Harry Potter Series?` +
                 ` and can your response to this message be: '${characterResponse[character]}'. Thanks in advance`;
-            // console.log(question);
-            const response = await axios.post(
-                'https://api.openai.com/v1/chat/completions',
-                {
-                    model: 'gpt-3.5-turbo', // Or any other model you prefer
-                    messages: [{ role: 'user',
-                        content: question}],
-                    temperature: 0.7
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + apiKey
-                    }
-                }
-            );
-            // console.log(response.data)
-            console.log(response)
-            const answer = response.data.choices[0].message.content.trim();
-            console.log(answer)
-            await handleCharacterIntro({question: question, answer: answer});
-            await handleCharacter(character);
+            handleCharacterIntro({question: question, answer: characterResponse[character]});
+            handleCharacter(character);
 
         } catch (error) {
             console.error('Error fetching response:', error);
@@ -50,16 +30,19 @@ export default function ChooseACharacter(){
     };
 
     return (
-        <div className="Characters-links">
-            <ul>
-                <button className="button" onClick={() => {
+        <div className="characters-links">
+
+            {!character && <ul className="characters-choose-container">
+                <button className="characters-choose-links-bubble Hagrid" onClick={() => {
                     emptyConversation()
-                    sendCharacter('Hagrid')}}
-                    >Hagrid</button>
-                <button className="button" onClick={() => {
+                    startCharacter('Hagrid')}}
+                    >
+                </button>
+                <button className="characters-choose-links-bubble" onClick={() => {
                     emptyConversation();
-                    sendCharacter('Dumbledore')}}>Dumbledore</button>
-            </ul>
+                    startCharacter('Dumbledore')}}>Dumbledore</button>
+            </ul>}
+            {character && <button className="button" onClick={emptyConversation}>Change Character</button> }
         </div>
     )
 }
