@@ -4,14 +4,21 @@ import axios from "axios";
 
 
 export default function ChooseACharacter(){
-    const {handleCharacterIntro, addConversation, character, handleCharacter, characterResponse} = useContext(ConversationContext);
+    const {handleCharacterIntro, addConversation, cleanConversation,
+        character, handleCharacter, characterResponse} = useContext(ConversationContext);
     const apiKey = process.env.REACT_APP_API_KEY;
+
+    const emptyConversation = () => {
+        handleCharacter("");
+        handleCharacterIntro(undefined)
+        cleanConversation();
+    }
 
     const sendCharacter = async (character) => {
         try {
             const question = `Can you please have a chat with me as if you are ${character} from Harry Potter Series?` +
                 ` and can your response to this message be: '${characterResponse[character]}'. Thanks in advance`;
-            console.log(question);
+            // console.log(question);
             const response = await axios.post(
                 'https://api.openai.com/v1/chat/completions',
                 {
@@ -28,6 +35,7 @@ export default function ChooseACharacter(){
                 }
             );
             // console.log(response.data)
+            console.log(response)
             const answer = response.data.choices[0].message.content.trim();
             console.log(answer)
             await handleCharacterIntro({question: question, answer: answer});
@@ -44,7 +52,13 @@ export default function ChooseACharacter(){
     return (
         <div className="Characters-links">
             <ul>
-                <button className="button" onClick={() => sendCharacter('Hagrid')}>Hagrid</button>
+                <button className="button" onClick={() => {
+                    emptyConversation()
+                    sendCharacter('Hagrid')}}
+                    >Hagrid</button>
+                <button className="button" onClick={() => {
+                    emptyConversation();
+                    sendCharacter('Dumbledore')}}>Dumbledore</button>
             </ul>
         </div>
     )

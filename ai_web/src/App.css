@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 200vh;
-  background-image: url("./openart-image_hdMCk0LD_1709564858693_raw.jpg");
+  background-image: url("resorces/openart-image_hdMCk0LD_1709564858693_raw.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -13,8 +13,11 @@
   left: 0;
 }
 .Footer-Link{
-  background-color: #dddddd;
+  background-color: saddlebrown;
   border-radius: 0 0.5rem 0 0;
+  color: gold;
+  opacity: 0.85;
+  font-family: "Curlz MT";
 }
 
 .Header{
@@ -22,38 +25,34 @@
   top: 0;
   left: -3%;
   height: 90%;
-  background-color: #333; /* Adjust as needed */
   color: #fff; /* Adjust as needed */
-  padding: 10px; /* Adjust padding as needed */
-  z-index: 1000; /* Ensure header appears above other content */
+  padding: 10px;
   background: transparent;
+  font-family: "Curlz MT";
+}
+
+.link-container{
+  background-color: rgba(255, 215, 0, 0.2);
+  border-radius: 0 1rem 1rem 0;
+  /*opacity: 0.85;*/
 }
 
 .conversation{
-  box-sizing: border-box;
-  /*padding-bottom: 31.9rem;*/
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
   box-shadow: 0 3rem 6rem rgba(70, 41, 242, 0.1400000006);
-  background-color: gold;
   border-radius: 1rem 1rem 1rem 1rem;
-}
+  background-color: transparent;
 
-/*.conversation.chatBox{*/
-/*  box-sizing: border-box;*/
-/*  padding-bottom: 31.9rem;*/
-/*  align-items: center;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  box-shadow: 0 3rem 6rem rgba(70, 41, 242, 0.1400000006);*/
-/*}*/
+}
 
 .ConversationList{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: green;
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .QAndA{

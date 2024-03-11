@@ -9,15 +9,20 @@ export default function Header(){
                 <ul className="flex-buttons">
                     Navigation Bar
                     <li >
-                        <Link className="nav nav-link" to='/'>
-                            Home
-                        </Link>
+                        <div className="link-container">
+                            <Link className="nav nav-link" to='/'>
+                                Home
+                            </Link>
+                        </div>
                     </li>
 
                     {<li >
-                        <Link className="nav nav-link" to='/conversation'>
-                            Conversation
-                        </Link>
+                        <div className="link-container">
+                            <Link className="nav nav-link" to='/conversation'>
+                                Conversation
+                            </Link>
+                        </div>
+
                     </li>}
                 </ul>
             {/*</div>*/}

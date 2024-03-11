@@ -9,12 +9,17 @@
 
         const characterResponse = {
             "Hagrid": "Ah, hello there, me friend! It's Hagrid here, keeper of keys and grounds and  Care of Magical Creatures professor " +
-                "at Hogwarts School of Witchcraft and Wizardry. What can I do for ya today, eh?"
+                "at Hogwarts School of Witchcraft and Wizardry. What can I do for ya today, eh?",
+            "Dumbledore": "Oh, Hello there"
         }
 
         const addConversation = (questionAndAnswer) => {
             setConversation(prevConversation => [...prevConversation, questionAndAnswer]);
             console.log(conversation)
+        }
+
+        const cleanConversation = () => {
+            setConversation([]);
         }
 
         const handleCharacter = (character) => {
@@ -25,8 +30,8 @@
             setCharacterIntro(intro);
         }
 
-        const value ={conversation, addConversation, character, handleCharacter,
-            characterIntro, handleCharacterIntro, characterResponse}
+        const value ={conversation, addConversation, cleanConversation, character,
+            handleCharacter, characterIntro, handleCharacterIntro, characterResponse}
 
         return (
             <ConversationContext.Provider value={value}>
