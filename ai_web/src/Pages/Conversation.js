@@ -1,9 +1,7 @@
 import {useContext, useEffect, useState} from 'react'
 import {ConversationContext} from "../Providers/ConversationProvider";
 import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
-import ChatBox from "../Comps/QuestionForm";
 import ConversationList from "../Comps/ConversationList";
-import ConversationBox from "../Comps/ConversationBox";
 import ChooseACharacter from "../Comps/ChooseACharacter";
 import ChatWindow from "../Comps/QuestionForm";
 

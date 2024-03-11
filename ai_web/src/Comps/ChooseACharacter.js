@@ -1,6 +1,5 @@
 import {useContext} from "react";
 import {ConversationContext} from "../Providers/ConversationProvider";
-import axios from "axios";
 import HagridImage from "../Resorces/Hagrid.jpg"
 import DumbledoreImage from "../Resorces/Dumbledore.jpg"
 import ChangeCharacter from "../Resorces/Change-Character-Hogwarts.jpg"
@@ -9,7 +8,6 @@ import ChangeCharacter from "../Resorces/Change-Character-Hogwarts.jpg"
 export default function ChooseACharacter(){
     const {handleCharacterIntro, cleanConversation,
         character, handleCharacter, characterResponse} = useContext(ConversationContext);
-    const apiKey = process.env.REACT_APP_API_KEY;
 
     const emptyConversation = () => {
         handleCharacter("");
