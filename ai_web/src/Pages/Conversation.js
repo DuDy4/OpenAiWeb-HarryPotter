@@ -6,7 +6,7 @@ import ChooseACharacter from "../Comps/ChooseACharacter";
 import ChatWindow from "../Comps/QuestionForm";
 
 export default function Conversation(){
-    const {conversation, characterIntro} = useContext(ConversationContext);
+    const {conversation, characterIntro, character} = useContext(ConversationContext);
     const [, setTriggerRerender] = useState({}); // Dummy state to trigger re-render
     let conversationId = 0;
 
@@ -33,9 +33,9 @@ export default function Conversation(){
                                        question={questionAndAnswer.question}
                                        answer={questionAndAnswer.answer}/>)}
             </ConversationList>
-            <div className="prompt-container">
+            {character && <div className="prompt-container">
                 <ChatWindow/>
-            </div>
+            </div>}
         </div>
     )
 }

@@ -54,7 +54,7 @@ const ChatWindow = () => {
 
     return (
         <div className="prompt-line">
-            <input className="prompt-text"
+            <textarea className="prompt-text"
                    placeholder="Type a message..."
                    onKeyDown={(e) => {
                        if (!(e.shiftKey && e.key === 'Enter') && e.key === 'Enter') {
