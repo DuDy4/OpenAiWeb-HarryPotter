@@ -53,16 +53,24 @@ const ChatWindow = () => {
     };
 
     return (
-        <div className="chatWindow">
-            <textarea
-                    placeholder="Type a message..."
-                    onKeyDown={(e) => {
-                        if (!(e.shiftKey && e.key === 'Enter') && e.key === 'Enter') {
-                            sendQuestion(e.target.value);
-                            e.target.value = '';
-                        }
-                    }}/>
-            <br/>
+        <div className="prompt-line">
+            <input className="prompt-text"
+                   placeholder="Type a message..."
+                   onKeyDown={(e) => {
+                       if (!(e.shiftKey && e.key === 'Enter') && e.key === 'Enter') {
+                           sendQuestion(e.target.value);
+                           e.target.value = '';
+                       }
+                   }}/>
+            {/*<textarea*/}
+            {/*        placeholder="Type a message..."*/}
+            {/*        onKeyDown={(e) => {*/}
+            {/*            if (!(e.shiftKey && e.key === 'Enter') && e.key === 'Enter') {*/}
+            {/*                sendQuestion(e.target.value);*/}
+            {/*                e.target.value = '';*/}
+            {/*            }*/}
+            {/*        }}/>*/}
+            {/*<br/>*/}
         </div>
     );
 };

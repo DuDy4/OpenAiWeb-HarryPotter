@@ -5,6 +5,7 @@ import ChatBox from "../Comps/QuestionForm";
 import ConversationList from "../Comps/ConversationList";
 import ConversationBox from "../Comps/ConversationBox";
 import ChooseACharacter from "../Comps/ChooseACharacter";
+import ChatWindow from "../Comps/QuestionForm";
 
 export default function Conversation(){
     const {conversation, characterIntro} = useContext(ConversationContext);
@@ -34,7 +35,9 @@ export default function Conversation(){
                                        question={questionAndAnswer.question}
                                        answer={questionAndAnswer.answer}/>)}
             </ConversationList>
-            <ChatBox/>
+            <div className="prompt-container">
+                <ChatWindow/>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import {useContext} from "react";
 import {ConversationContext} from "../Providers/ConversationProvider";
 import axios from "axios";
+import HagridImage from "../Resorces/Hagrid.jpg"
+import DumbledoreImage from "../Resorces/Dumbledore.jpg"
+import ChangeCharacter from "../Resorces/Change-Character-Hogwarts.jpg"
 
 
 export default function ChooseACharacter(){
@@ -31,18 +34,23 @@ export default function ChooseACharacter(){
 
     return (
         <div className="characters-links">
-
             {!character && <ul className="characters-choose-container">
-                <button className="characters-choose-links-bubble Hagrid" onClick={() => {
+                <button className="characters-choose-links-bubble" onClick={() => {
                     emptyConversation()
                     startCharacter('Hagrid')}}
                     >
+                    <img className="image-link-character" src={HagridImage} title="Hagrid" alt="Hagrid" height="100"/>
+
                 </button>
                 <button className="characters-choose-links-bubble" onClick={() => {
                     emptyConversation();
-                    startCharacter('Dumbledore')}}>Dumbledore</button>
+                    startCharacter('Dumbledore')}}>
+                    <img className="image-link-character" src={DumbledoreImage} title="Dumbledore" alt="Dumbledore" height="100"/>
+                </button>
             </ul>}
-            {character && <button className="button" onClick={emptyConversation}>Change Character</button> }
+            {character && <button  onClick={emptyConversation}>
+                <img className="characters-choose-links-bubble" src={ChangeCharacter} alt="Change Character" height="200"/>
+            </button> }
         </div>
     )
 }
