@@ -3,7 +3,8 @@ import {ConversationContext} from "../Providers/ConversationProvider";
 import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
 import ConversationList from "../Comps/ConversationList";
 import ChooseACharacter from "../Comps/ChooseACharacter";
-import ChatWindow from "../Comps/QuestionForm";
+import ChatWindow from "../Comps/QuestionPromptLine";
+import QuestionPromptLine from "../Comps/QuestionPromptLine";
 
 export default function Conversation(){
     const {conversation, characterIntro, character} = useContext(ConversationContext);
@@ -34,7 +35,7 @@ export default function Conversation(){
                                        answer={questionAndAnswer.answer}/>)}
             </ConversationList>
             {character && <div className="prompt-container">
-                <ChatWindow/>
+                <QuestionPromptLine/>
             </div>}
         </div>
     )

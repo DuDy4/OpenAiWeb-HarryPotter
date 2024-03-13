@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/felt-tip-roman');
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
 
 .App {
   display: flex;
@@ -6,6 +8,19 @@
   background-image: url("Resorces/Backround-Hogwarts.jpg");
   background-position: center;
   background-size: cover;
+  font-family: 'Harry Potter', sans-serif;
+
+}
+
+.Header{
+  position: fixed;
+  top: 0;
+  left: -3%;
+  height: 90%;
+  color: #fff; /* Adjust as needed */
+  padding: 10px;
+  background: transparent;
+  font-family: "Curlz MT", serif;
 }
 
 .Footer{
@@ -22,15 +37,33 @@
   font-family: "Curlz MT", serif;
 }
 
-.Header{
-  position: fixed;
-  top: 0;
-  left: -3%;
-  height: 90%;
-  color: #fff; /* Adjust as needed */
-  padding: 10px;
-  background: transparent;
-  font-family: "Curlz MT", serif;
+.Home{
+  background: rgba(10, 20, 20, 0.6);
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding: 5%;
+  font-family: 'Harry Potter', sans-serif;
+  color: gold;
+}
+
+.Contact-container{
+  background-image: url("Resorces/parchment-background.png");
+  background-size: contain;
+  margin-left: 25%;
+  margin-right: 20%;
+  width: 100%;
+  padding: 10% 15% 15% 10%;
+  background-repeat:no-repeat;
+  font-family: 'Harry Potter', sans-serif;
+}
+
+.Contact{
+  font-family: 'Harry Potter', sans-serif;
+  color: #1d1648;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .conversation{
@@ -38,9 +71,6 @@
   align-items: center;
   align-self: center;
   width: 70%;
-  /*padding-top: 10%;*/
-  /*padding-right: 20%;*/
-  /*padding-left: 10%;*/
   margin-left: 15%;
   margin-right: 15%;
   flex-direction: column;
@@ -52,7 +82,6 @@
 .link-container{
   background-color: rgba(255, 215, 0, 0.2);
   border-radius: 0 1rem 1rem 0;
-  /*opacity: 0.85;*/
 }
 
 .characters-choose-container{
@@ -122,6 +151,7 @@
   gap: 20px;
   border-radius: 0 1rem 1rem 1rem;
   background-color: #f1f7ff;
+  width: 60%;
 }
 
 .AnswerBubble{
@@ -136,6 +166,14 @@
 
 .Answer{
   color: #0d082c;
+}
+
+.Dumbledore{
+  font-family: "Comic Sans MS", c cursive;
+}
+
+.Hagrid{
+  font-family: 'Felt Tip Roman', sans-serif;
 }
 
 .prompt-container{
@@ -166,11 +204,6 @@
   word-break: break-word;
 }
 
-.Home{
-  background: #61dafb;
-  border-radius: 1rem 1rem 1rem 1rem;
-}
-
 .contact{
   background: white;
   border-radius: 1rem 1rem 1rem 1rem;
@@ -184,7 +217,7 @@
   flex-direction: column;
   text-align: center;
   justify-content: space-evenly;
-  list-style-type: none; /* Remove bullets */
+  list-style-type: none;
   gap: 10px;
 
 }
@@ -203,6 +236,13 @@
   background-color: transparent;
 }
 
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .formLines{
   display: flex;
   flex-direction: column;
@@ -214,7 +254,20 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+}
+
+.contact-submit{
+  border: none;
+  background-color: transparent;
+  padding-top: 5%;
+}
+
+.owl-contact-submit{
+  width: 30%;
+  border-radius: 30rem 30rem 30rem 30rem;
+  box-shadow: #0d082b;
 }
 
 .App-logo {

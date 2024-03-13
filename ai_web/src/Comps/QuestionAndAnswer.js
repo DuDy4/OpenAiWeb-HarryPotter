@@ -1,5 +1,9 @@
+import {useContext} from "react";
+import {ConversationContext} from "../Providers/ConversationProvider";
 
 export default function QuestionAndAnswer({question, answer}){
+
+    const {character} = useContext(ConversationContext);
 
     return(
         <div className="QAndA">
@@ -10,7 +14,7 @@ export default function QuestionAndAnswer({question, answer}){
             </div>}
             {answer && <div className="AnswerBubbleContainer">
                 <div className="AnswerBubble">
-                    <div className="Answer">{answer}</div>
+                    <div className={"Answer " + character}>{answer}</div>
                 </div>
             </div>}
         </div>
