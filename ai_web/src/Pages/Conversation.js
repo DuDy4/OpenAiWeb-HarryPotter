@@ -1,27 +1,18 @@
-import {useContext, useEffect, useState} from 'react'
+import {useContext} from 'react'
 import {ConversationContext} from "../Providers/ConversationProvider";
 import QuestionAndAnswer from "../Comps/QuestionAndAnswer";
 import ConversationList from "../Comps/ConversationList";
 import ChooseACharacter from "../Comps/ChooseACharacter";
-import ChatWindow from "../Comps/QuestionPromptLine";
 import QuestionPromptLine from "../Comps/QuestionPromptLine";
 
 export default function Conversation(){
     const {conversation, characterIntro, character} = useContext(ConversationContext);
-    const [, setTriggerRerender] = useState({}); // Dummy state to trigger re-render
     let conversationId = 0;
 
-
-
-    function getId(){
+    function getId(){ //This will ensure a unique id(key) for each child in the unordered list
         conversationId++;
         return conversationId - 1;
     }
-
-
-    useEffect(() => {
-        setTriggerRerender({});
-    }, [conversation]);
 
     return (
         <div className="conversation">

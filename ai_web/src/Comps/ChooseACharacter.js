@@ -40,7 +40,7 @@ export default function ChooseACharacter(){
                     <img className="image-link-character" src={DumbledoreImage} title="Dumbledore" alt="Dumbledore" height="100"/>
                 </button>
                 </ul></div>}
-            {character && <button  onClick={emptyConversation}>
+            {character && <button className="remove-character-container" onClick={emptyConversation}>
                 <img className="characters-choose-links-bubble" src={ChangeCharacter} alt="Change Character" height="200"/>
             </button> }
         </div>

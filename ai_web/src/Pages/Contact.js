@@ -1,8 +1,6 @@
 import {useState} from "react";
 import {useForm} from "react-hook-form";
 import sendButton from "../Resorces/conact_us_button2.jpg"
-import contactBackground from "../Resorces/parchment-background.png"
-
 
 export default function Contact() {
     const [complaint, setComplaint] = useState(true)
@@ -18,9 +16,6 @@ export default function Contact() {
         setComplaint(false);
         reset()
     }
-
-    //This page will take a form of complaint and direct the page to an "accepted" page.
-    //There, the user can choose to file another complaint.
     return (
         <div className="Contact-container">
             <div className="Contact">
