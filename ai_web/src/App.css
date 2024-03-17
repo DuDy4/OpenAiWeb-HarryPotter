@@ -284,29 +284,6 @@
   box-shadow: #0d082b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.created-by{
-  color: rgb(128, 128, 128);
-}
-
-.logOutButton{
-  color: red;
-  border: 1px solid rgb(128, 128, 128);
-  background-color: white;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -318,15 +295,4 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -18,6 +18,15 @@ export default function QuestionAndAnswer({question, answer}){
                     <div className="Question">{question}</div>
                 </div>
             </div>}
+
+
+            {
+                //The next section will build either an answer, or a loading animation.
+                //While after the user sent a question, and until the API returns an answer,
+                //The loading animation will play.
+                //After the response arrived, the animation will be replaced by the answer
+
+            }
             {answer ?
                 <div className="AnswerBubbleContainer">
                     <div className="AnswerBubble">

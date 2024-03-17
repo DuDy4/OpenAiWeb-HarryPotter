@@ -23,6 +23,9 @@ export default function ChooseACharacter(){
         handleCharacter(character);
     };
 
+
+    //The component returns a <ul> of characters,
+    //or if a character is chosen, a button to return the choosing menu.
     return (
         <div className="characters-links">
             {!character && <div>

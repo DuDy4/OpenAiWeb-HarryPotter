@@ -1,6 +1,6 @@
 import './App.css';
 import Header from "./Comps/Header";
-import Footer from "./Comps/footer";
+import Footer from "./Comps/Footer";
 import {Outlet} from "react-router-dom";
 
 function App() {

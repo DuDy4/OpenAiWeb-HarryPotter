@@ -7,7 +7,7 @@ export default function Contact() {
     const [idCounter, setIdCounter] = useState(0) // ID counter for the local storage
     const { register, handleSubmit, reset } = useForm();
 
-    //This function happen on submit, saves the data to local storage and rerender the page.
+    //This function happens on submit, saves the data to local storage and rerender the page.
     const handleComplaint = (data) => {
         const id = idCounter;
         setIdCounter(idCounter + 1);
