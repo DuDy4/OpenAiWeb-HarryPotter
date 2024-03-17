@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/felt-tip-roman');
 @import url('https://fonts.cdnfonts.com/css/harry-potter');
+@import url('https://fonts.cdnfonts.com/css/magic-school-one');
 
 .App {
   display: flex;
@@ -176,10 +177,17 @@
 
 .Dumbledore{
   font-family: "Comic Sans MS", c cursive;
+  font-size: large;
 }
 
 .Hagrid{
   font-family: 'Felt Tip Roman', sans-serif;
+  font-size: larger;
+}
+
+.Dobby{
+  font-family: 'Magic School one', sans-serif;
+  font-size: x-large;
 }
 
 .prompt-container{

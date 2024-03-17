@@ -15,7 +15,9 @@
             "Hagrid": "Ah, hello there, me friend! It's Hagrid here, keeper of keys and grounds and  Care of Magical Creatures professor " +
                 "at Hogwarts School of Witchcraft and Wizardry. What can I do for ya today, eh?",
             "Dumbledore": "Oh, Hello there. It is a pleasure to chat with you today." +
-                " How may I assist you in your magical endeavors?"
+                " How may I assist you in your magical endeavors?",
+            "Dobby": "Oh, Dobby has never been asked to sit down and talk with a wizard — like an equal.\n" +
+                "What can Dobby do for you, good sir/madam?"
         }
 
         useEffect(() => {
@@ -65,9 +67,7 @@
         const sendQuestion = async (question) => {
             try {
                 const msg = prepareMessage(question);
-                console.log("message: ", msg);
                 await addConversation({question: question, answer: ''});
-                console.log("conversation after addition of question: ", conversation)
                 const response = await axios.post(
                     'https://api.openai.com/v1/chat/completions',
                     {
@@ -83,10 +83,8 @@
                     }
                 );
                 const answer = await response.data.choices[0].message.content.trim()
-                // console.log(answer);
-                console.log("conversation after response", conversation);
+                console.log(answer);
                 updateLastConversation({question: question, answer: answer});
-                console.log(conversation)
 
             } catch (error) {
                 console.error('Error fetching response:', error);
