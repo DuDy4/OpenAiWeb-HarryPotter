@@ -67,8 +67,8 @@
         const updateLastConversation = (newQuestionAndAnswer) => {
             setConversation(prevConversation => {
                 const updatedConversation = [...prevConversation];
-                updatedConversation.pop(); // Remove the last conversation
-                updatedConversation.push(newQuestionAndAnswer); // Add the new conversation
+                updatedConversation.pop(); // Remove the conversation with the empty answer.
+                updatedConversation.push(newQuestionAndAnswer); // Add the new conversation (question and answer)
                 return updatedConversation;
             });
         };
