@@ -1,13 +1,7 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import {ConversationContext} from "../Providers/ConversationProvider";
 
 export default function QuestionAndAnswer({question, answer}){
-
-    const [hasAnswer, setHasAnswer] = useState(false);
-
-    useEffect(() => {
-        setHasAnswer(!hasAnswer);
-    }, [question, answer]);
 
     const {character} = useContext(ConversationContext);
 
