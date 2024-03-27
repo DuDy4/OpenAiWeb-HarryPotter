@@ -10,19 +10,70 @@
   background-position: center;
   background-size: cover;
   font-family: 'Harry Potter', sans-serif;
+}
 
+@media (max-width: 800px){
+  .App{
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 500px){
+  .App{
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 300px){
+  .App{
+    min-height: 100vh;
+  }
+}
+
+.content {
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+}
+
+@media (max-width: 725px) {
+  .content {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 350px) {
+  .content {
+    margin-top: 20%;
+  }
 }
 
 .Header{
   position: fixed;
   top: 0;
   left: -3%;
-  height: 90%;
-  color: #fff; /* Adjust as needed */
+  height: 1%;
+  color: #fff;
   padding: 10px;
   background: transparent;
   font-family: "Curlz MT", serif;
 }
+
+.flex-buttons{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+  gap: 10px;
+}
+
+@media (max-width: 725px) {
+    .flex-buttons {
+      flex-direction: row;
+    }
+  }
 
 .Footer{
   position: fixed;
@@ -46,27 +97,6 @@
   color: gold;
 }
 
-.Contact-container{
-  background-image: url("Resorces/parchment-background.png");
-  background-size: contain;
-  margin-left: 25%;
-  margin-right: 20%;
-  width: 100%;
-  padding: 10% 15% 15% 10%;
-  background-repeat:no-repeat;
-  font-family: 'Harry Potter', sans-serif;
-}
-
-.Contact{
-  font-family: 'Harry Potter', sans-serif;
-  color: #1d1648;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .conversation{
   display: flex;
   align-items: center;
@@ -80,20 +110,55 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 500px) {
+  .conversation{
+    margin-right: 3%;
+    margin-left: 3%;
+    width: 94%;
+  }
+}
+
+.choose-character-title{
+  align-self: center;
+  text-align: center;
+  font-size: 35px;
+}
+
+@media (max-width: 500px) {
+  .choose-character-title{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 300px) {
+  .choose-character-title{
+    font-size: 15px;
+  }
+}
+
 .link-container{
   background-color: rgba(255, 215, 0, 0.2);
   border-radius: 0 1rem 1rem 0;
+}
+
+@media (max-width: 725px) {
+  .link-container{
+    border-radius: 0 0 1rem 1rem;
+    background-color: rgba(255, 215, 0, 0.6);
+
+  }
 }
 
 .characters-choose-container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .characters-choose-links-bubble{
-  padding: 8px 8px 8px 8px;
+  padding: 3% 3% 3% 3%;
   background-repeat: no-repeat;
   background-position: 8px 8px;
   border-radius: 3rem 3rem 3rem 3rem;
@@ -105,13 +170,27 @@
 }
 
 .characters-links{
-  padding: 10px;
+  padding: 1px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 .remove-character-container{
   border: transparent;
+  /*align-self: center;*/
   background-color: rgba(255,255,255, 0.1);
   border-radius: 2rem 2rem 2rem 2rem;
+}
+
+.change-character{
+  height: 180px;
+}
+
+@media (max-width: 500px) {
+  .change-character{
+    height: 150px;
+  }
 }
 
 .ConversationList{
@@ -128,6 +207,12 @@
   flex-direction: column;
   gap: 10px;
   background: transparent;
+}
+
+@media (max-width: 500px) {
+  .QAndA{
+
+  }
 }
 
 .QuestionBubbleContainer{
@@ -161,11 +246,21 @@
   width: 60%;
 }
 
+@media (max-width: 500px) {
+  .AnswerBubbleContainer{
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  .AnswerBubbleContainer{
+    width: 96%;
+  }
+}
+
 .AnswerBubble{
   display: flex;
   flex-direction: row;
   align-self: end;
-
   justify-content: center;
   align-items: center;
   margin: 4px 10px 4px 10px ;
@@ -189,6 +284,27 @@
   font-family: 'Magic School one', sans-serif;
   font-size: x-large;
 }
+
+@media (max-width: 500px) {
+  .Hagrid{
+    font-size: large;
+  }
+
+  .Dobby{
+    font-size: large;
+  }
+}
+
+@media (max-width: 500px) {
+  .Hagrid{
+    font-size: medium;
+  }
+
+  .Dobby{
+    font-size: medium;
+  }
+}
+
 
 .prompt-container{
   width: 100%;
@@ -218,23 +334,6 @@
   word-break: break-word;
 }
 
-.contact{
-  background: white;
-  border-radius: 1rem 1rem 1rem 1rem;
-}
-.margin-top-60px{
-  margin-top: 60px;
-}
-
-.flex-buttons{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-evenly;
-  list-style-type: none;
-  gap: 10px;
-
-}
 
 .flexCorner {
   display: flex;
@@ -243,11 +342,50 @@
   min-width: 45vh;
 }
 
-.content {
-  margin: 5%;
+.Contact-container{
+  background-image: url("Resorces/parchment-background.png");
+  background-size: cover;
+  margin: 10%;
+  padding: 10% 15% 15% 10%;
+  background-repeat:no-repeat;
+  font-family: 'Harry Potter', sans-serif;
+}
+
+@media (max-width: 725px) {
+  .Contact-container{
+    margin: 10%;
+    padding: 7%;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .Contact-container{
+    margin: 5%;
+    padding: 5%;
+  }
+}
+
+@media (max-width: 310px) {
+  .Contact-container{
+    margin: 1%;
+    padding: 1%;
+  }
+}
+
+.Contact{
+  font-family: 'Harry Potter', sans-serif;
+  color: #1d1648;
+  text-align: center;
   display: flex;
-  flex-direction: row;
-  background-color: transparent;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.margin-top-60px{
+  margin-top: 60px;
 }
 
 .form{
@@ -295,4 +433,34 @@
   color: white;
 }
 
+
+@media (max-width: 725px) {
+  h1 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  label {
+    font-size: small;
+  }
+}
+
+@media (max-width: 300px) {
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+}
 

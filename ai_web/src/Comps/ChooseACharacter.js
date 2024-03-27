@@ -29,7 +29,7 @@ export default function ChooseACharacter(){
     return (
         <div className="characters-links">
             {!character && <div>
-                <h1>Select a character you wish to speak with:</h1> <br/>
+                <p className="choose-character-title">Select a character you wish to speak with:</p> <br/>
                 <ul className="characters-choose-container">
                     <button className="characters-choose-links-bubble" onClick={() => {
                         emptyConversation()
@@ -51,7 +51,7 @@ export default function ChooseACharacter(){
                     </button>
                 </ul></div>}
             {character && <button className="remove-character-container" onClick={emptyConversation}>
-                <img className="characters-choose-links-bubble" src={ChangeCharacter} alt="Change Character" height="200"/>
+                <img className="characters-choose-links-bubble change-character" src={ChangeCharacter} alt="Change Character"/>
             </button> }
         </div>
     )
